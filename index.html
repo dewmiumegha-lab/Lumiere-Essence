@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière Essence — Premium DIY Skin & Hair Rituals</title>
+  <meta name="google-site-verification" content="X5UuLucrnpxfJYhswEysCfvTCaubm3HXs5Rt2uIyFKo" />
+  <meta name="p:domain_verify" content="ca638c91712ea961266f4f1a31002772"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            botanical: {
+              lightBg:   '#FDFBF7',   /* Premium Bright Alabaster Canvas */
+              cardBg:    '#F4EFEA',   /* High-Contrast Oatmeal Linen for Cards */
+              textDark:  '#1C281B',   /* Ultra-Readable Deep Forest Black */
+              textMuted: '#556254',   /* Earthy Sage for readable secondary text */
+              accent:    '#C07A4B',   /* High-visibility Warm Terracotta */
+              border:    '#E1DAD0',   /* Crisp structural grid lines */
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FDFBF7;
+      color: #1C281B;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .editorial-card {
+      background: #F4EFEA;
+      border: 1px solid #E1DAD0;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .editorial-card:hover {
+      transform: translateY(-6px);
+      border-color: #C07A4B;
+      box-shadow: 0 20px 40px rgba(28, 40, 27, 0.08);
+    }
+
+    .btn-remedy {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .btn-remedy::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    .btn-remedy:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .recipe-card.hidden { display: none !important; }
+    
+    /* Custom Scrollbar for Light Premium Theme */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #FDFBF7; }
+    ::-webkit-scrollbar-thumb { background: #E1DAD0; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C07A4B; }
+  </style>
+</head>
+
+<body class="bg-botanical-lightBg text-botanical-textDark antialiased">
+
+  <!-- Minimalist Light Navbar -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-botanical-lightBg/90 backdrop-blur-md border-b border-botanical-border">
+    <nav class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C281B" stroke-width="1.5" class="group-hover:rotate-12 transition-transform duration-500"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8a7 7 0 0 1-9 10Z"/><path d="M9 22v-4h4"/></svg>
+        <span class="font-display text-2xl tracking-[0.15em] uppercase text-botanical-textDark font-semibold">Lumière Essence</span>
+      </a>
+
+      <ul class="flex items-center gap-8 text-[11px] tracking-[0.25em] uppercase font-bold">
+        <li><a href="#" class="text-botanical-textDark hover:text-botanical-accent transition-colors">Home</a></li>
+        <li><a href="#rituals" class="text-botanical-textDark hover:text-botanical-accent transition-colors">Rituals</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Editorial Hero Section -->
+  <section class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-24 bg-gradient-to-b from-[#F4EFEA]/40 to-transparent">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <p class="text-botanical-accent text-[10px] tracking-[0.35em] uppercase font-bold">The Art of Pure, Plant-Based Self Care</p>
+      
+      <h1 class="text-botanical-textDark font-display text-5xl sm:text-6xl md:text-8xl font-light leading-[1.1] tracking-tight">
+        Nourish your body <br/>
+        <span class="italic font-normal font-display text-botanical-accent">with Earth's finest essence.</span>
+      </h1>
+      
+      <p class="text-xs sm:text-sm text-botanical-textMuted max-w-xl mx-auto font-light leading-relaxed tracking-wide pt-2">
+        Explore simple, raw, chemical-free DIY rituals designed to awaken glowing skin and timeless, healthy hair right from your kitchen space.
+      </p>
+
+      <!-- High-Visibility Search Box -->
+      <div class="pt-8">
+        <form class="flex w-full max-w-lg mx-auto bg-white border-2 border-botanical-textDark/80 focus-within:border-botanical-accent transition-colors shadow-md overflow-hidden" onsubmit="searchRecipes(event)">
+          <input id="search-input" type="text" placeholder="Search secrets (flaxseed, rice water, honey...)" class="flex-1 px-6 py-4 text-xs font-medium tracking-wide outline-none text-botanical-textDark bg-transparent placeholder-botanical-textMuted/60" />
+          <button type="submit" class="bg-botanical-textDark text-white text-[10px] tracking-[0.2em] uppercase px-8 py-4 hover:bg-botanical-accent transition-colors font-bold">Find Ritual</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section / Gallery -->
+  <main id="rituals" class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+    
+    <!-- Editorial Filter Tabs -->
+    <div class="flex items-center justify-center gap-8 mb-16 border-b-2 border-botanical-border max-w-md mx-auto pb-4">
+      <button id="btn-all" class="filter-btn text-[11px] tracking-[0.2em] uppercase font-bold text-botanical-textDark border-b-2 border-botanical-textDark pb-4 -mb-[18px]" onclick="filterGallery('all', this)">All Rituals</button>
+      <button class="filter-btn text-[11px] tracking-[0.2em] uppercase font-bold text-botanical-textMuted hover:text-botanical-textDark border-b-2 border-transparent pb-4 -mb-[18px] transition-colors" onclick="filterGallery('skin', this)">Skin Care</button>
+      <button class="filter-btn text-[11px] tracking-[0.2em] uppercase font-bold text-botanical-textMuted hover:text-botanical-textDark border-b-2 border-transparent pb-4 -mb-[18px] transition-colors" onclick="filterGallery('hair', this)">Hair Care</button>
+    </div>
+
+    <!-- Asymmetric Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-4">
+      
+      <!-- Ritual 1 -->
+      <div class="recipe-card editorial-card p-4" data-category="hair" data-keywords="flaxseed gel hair growth curls shiny damage repair">
+        <div class="w-full aspect-[4/5] overflow-hidden bg-botanical-lightBg border border-botanical-border cursor-pointer" onclick="openRecipe('Flaxseed Gel Magic', 'hair', 'Flaxseed, Purified Water, Lavender Oil', '1. Boil 2 cups of water with 1/4 cup of raw flaxseeds.\n2. Stir gently until a light gel foam forms and thickens.\n3. Strain the clear gel immediately using a fine mesh or cloth.\n4. Let it cool completely, drop 2 drops of lavender oil, and apply from roots to tips.')">
+          <img src="images/flaxseed.png" alt="Minimalist photography of organic flaxseeds" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+        </div>
+        <div class="pt-6 pb-2 px-2 space-y-2">
+          <span class="text-[9px] font-bold text-botanical-accent uppercase tracking-[0.2em]">Hair Care Secret</span>
+          <h3 class="font-display text-2xl font-medium text-botanical-textDark leading-tight">DIY Flaxseed Gel for Intense Hair Growth</h3>
+          <div class="flex justify-between items-center pt-4 text-xs">
+            <span class="text-botanical-textMuted font-medium">⏱️ 15 Mins</span>
+            <button class="btn-remedy text-botanical-textDark font-bold tracking-wider text-[11px] uppercase" onclick="this.parentElement.parentElement.previousElementSibling.click()">View Ritual</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ritual 2 (Fixed Image Path - image_362c16.jpg) -->
+      <div class="recipe-card editorial-card p-4" data-category="skin" data-keywords="rice water toner skin glowing bright anti aging glass skin">
+        <div class="w-full aspect-[4/5] overflow-hidden bg-botanical-lightBg border border-botanical-border cursor-pointer" onclick="openRecipe('Fermented Rice Water Toner', 'skin', 'Organic Jasmine Rice, Distilled Water, Fine Spray Bottle', '1. Rinse a cup of organic rice thoroughly to remove impurities.\n2. Soak the rice in clean water for 30 minutes, swirling gently to release nutrients.\n3. Strain the water into a clean glass jar and leave it to ferment at room temperature for 24 hours.\n4. Transfer to the fridge to stop fermentation, spray daily on washed skin.')">
+          <img src="images/ricewatertoner.png" alt="Elegant rice water skin toner preparation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+        </div>
+        <div class="pt-6 pb-2 px-2 space-y-2">
+          <span class="text-[9px] font-bold text-botanical-accent uppercase tracking-[0.2em]">Skin Care Secret</span>
+          <h3 class="font-display text-2xl font-medium text-botanical-textDark leading-tight">Fermented Rice Water Toner for Glass Skin</h3>
+          <div class="flex justify-between items-center pt-4 text-xs">
+            <span class="text-botanical-textMuted font-medium">⏱️ 24 Hours</span>
+            <button class="btn-remedy text-botanical-textDark font-bold tracking-wider text-[11px] uppercase" onclick="this.parentElement.parentElement.previousElementSibling.click()">View Ritual</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ritual 3 -->
+      <div class="recipe-card editorial-card p-4" data-category="skin" data-keywords="avocado honey mask dry skin sun damage sun burn hydration">
+        <div class="w-full aspect-[4/5] overflow-hidden bg-botanical-lightBg border border-botanical-border cursor-pointer" onclick="openRecipe('Honey Avocado Dry Skin Healer', 'skin', '1/2 Ripe Organic Avocado, 1 tbsp Organic Raw Honey', '1. Mash half an organic avocado in a ceramic bowl until smooth.\n2. Incorporate one tablespoon of pure organic raw honey and mix completely.\n3. Apply an even, thick layer to clean, sun-damaged or parched facial skin.\n4. Rest for 20 minutes, then wash gently with lukewarm water.')">
+          <img src="images/avacado.png" alt="Luxury organic facial treatment ingredients" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+        </div>
+        <div class="pt-6 pb-2 px-2 space-y-2">
+          <span class="text-[9px] font-bold text-botanical-accent uppercase tracking-[0.2em]">Skin Care Secret</span>
+          <h3 class="font-display text-2xl font-medium text-botanical-textDark leading-tight">Avocado & Honey Mask for Sun-Damaged Skin</h3>
+          <div class="flex justify-between items-center pt-4 text-xs">
+            <span class="text-botanical-textMuted font-medium">⏱️ 20 Mins</span>
+            <button class="btn-remedy text-botanical-textDark font-bold tracking-wider text-[11px] uppercase" onclick="this.parentElement.parentElement.previousElementSibling.click()">View Ritual</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Adsterra Banner Standard Placeholder -->
+    <div class="w-full flex justify-center overflow-hidden my-24">
+      <div class="inline-block text-center border border-botanical-border p-3 bg-white shadow-sm rounded-sm">
+        <script>
+          atOptions = {
+            'key' : '1a044cfac8693d5af1a4bfe1d0538227',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/1a044cfac8693d5af1a4bfe1d0538227/invoke.js"></script>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Adsterra Native Network Ads Placeholder -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 mb-20 flex justify-center overflow-hidden">
+    <div class="w-full max-w-[728px]">
+      <script async="async" data-cfasync="false" src="https://pl29767297.effectivecpmnetwork.com/7b7ad536693feb72dbb523aa28de748a/invoke.js"></script>
+      <div id="container-7b7ad536693feb72dbb523aa28de748a"></div>
+    </div>
+  </div>
+
+  <!-- High-Contrast Light Box Modal -->
+  <div id="recipe-lightbox" class="fixed inset-0 bg-botanical-textDark/40 z-[100] hidden flex items-center justify-center p-4 transition-all duration-300 backdrop-blur-sm">
+    <div class="bg-white max-w-xl w-full rounded-sm overflow-hidden shadow-2xl border-2 border-botanical-textDark relative max-h-[85vh] flex flex-col transition-all duration-500 scale-95 opacity-0" id="modal-content">
+      <button onclick="closeRecipe()" class="absolute top-5 right-5 text-botanical-textDark text-3xl font-light hover:text-botanical-accent transition-colors z-10">&times;</button>
+      
+      <div class="p-8 md:p-10 overflow-y-auto space-y-6">
+        <div>
+          <span id="popup-category" class="text-[9px] font-bold text-botanical-accent uppercase tracking-[0.25em]">Ritual Type</span>
+          <h2 id="popup-title" class="font-display text-3xl sm:text-4xl font-semibold text-botanical-textDark mt-2">Ritual Title</h2>
+        </div>
+        
+        <div class="space-y-2">
+          <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-botanical-textDark bg-botanical-cardBg px-2 py-1 inline-block">🌿 Essence Requirements:</h4>
+          <p id="popup-ingredients" class="text-xs sm:text-sm text-botanical-textDark font-medium bg-botanical-cardBg p-4 border-l-4 border-botanical-accent italic leading-relaxed"></p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-botanical-textDark bg-botanical-cardBg px-2 py-1 inline-block">🥣 Preparation & Application:</h4>
+          <p id="popup-instructions" class="text-xs sm:text-sm text-botanical-textDark/90 leading-relaxed whitespace-pre-line font-medium tracking-wide"></p>
+        </div>
+      </div>
+
+      <div class="bg-botanical-cardBg px-8 py-5 flex justify-between items-center border-t border-botanical-border">
+        <span class="text-[11px] text-botanical-textMuted font-medium tracking-wide">Save this recipe to your Pinterest wall</span>
+        <a href="https://pinterest.com" target="_blank" class="px-5 py-2 bg-[#E60023] text-white text-[10px] tracking-[0.15em] uppercase font-bold rounded-sm hover:bg-opacity-90 transition-all flex items-center gap-2 shadow-sm">
+          <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.771-2.249 3.771-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.032-1.002 2.324-1.492 3.121C10.211 23.891 11.093 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          Pin Ritual
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botanical Dark Contrast Footer -->
+  <footer class="bg-botanical-textDark text-white py-20 px-6 md:px-12 border-t border-botanical-border">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+      <div class="text-center md:text-left space-y-2">
+        <h3 class="font-display text-3xl font-light tracking-[0.1em]">Lumière Essence</h3>
+        <p class="text-white/50 text-[9px] tracking-[0.3em] uppercase">© 2026 Crafted for Aesthetic Organic Living</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <span class="text-[10px] text-white/70 uppercase tracking-[0.25em] font-light">Join our curation on Pinterest</span>
+        <a href="https://pinterest.com" target="_blank" class="bg-[#E60023] p-4 rounded-full hover:scale-110 transition-all flex items-center justify-center shadow-lg">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.771-2.249 3.771-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.032-1.002 2.324-1.492 3.121C10.211 23.891 11.093 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- UI Interactions Javascript -->
+  <script>
+    function filterGallery(category, btn) {
+      const cards = document.querySelectorAll('.recipe-card');
+      const btns = document.querySelectorAll('.filter-btn');
+
+      btns.forEach(b => {
+        b.classList.remove('text-botanical-textDark', 'border-botanical-textDark');
+        b.classList.add('text-botanical-textMuted', 'border-transparent');
+      });
+      
+      if(btn) {
+        btn.classList.add('text-botanical-textDark', 'border-botanical-textDark');
+        btn.classList.remove('text-botanical-textMuted', 'border-transparent');
+      }
+
+      document.getElementById('search-input').value = '';
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function searchRecipes(event) {
+      event.preventDefault(); 
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.recipe-card');
+      
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('text-botanical-textDark', 'border-botanical-textDark');
+        b.classList.add('text-botanical-textMuted', 'border-transparent');
+      });
+      document.getElementById('btn-all').classList.add('text-botanical-textDark', 'border-botanical-textDark');
+
+      cards.forEach(card => {
+        const keywords = card.dataset.keywords ? card.dataset.keywords.toLowerCase() : '';
+        const category = card.dataset.category ? card.dataset.category.toLowerCase() : '';
+        
+        if (query === '' || keywords.includes(query) || category.includes(query)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('rituals').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openRecipe(title, category, ingredients, instructions) {
+      const lightbox = document.getElementById('recipe-lightbox');
+      const content = document.getElementById('modal-content');
+      
+      document.getElementById('popup-title').innerText = title;
+      document.getElementById('popup-category').innerText = category === 'skin' ? 'Skin Care Ritual' : 'Hair Care Ritual';
+      document.getElementById('popup-ingredients').innerText = ingredients;
+      document.getElementById('popup-instructions').innerText = instructions;
+
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 50);
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRecipe() {
+      const lightbox = document.getElementById('recipe-lightbox');
+      const content = document.getElementById('modal-content');
+      
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }, 300);
+
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('recipe-lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeRecipe();
+      }
+    });
+  </script>
+  
+</body>
+</html>
