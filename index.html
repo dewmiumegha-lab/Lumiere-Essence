@@ -187,6 +187,21 @@
         </div>
       </div>
 
+      <!-- Ritual 4 (🟢 අලුතින් එකතු කරන ලද සත්කාරය) -->
+      <div class="recipe-card editorial-card p-4" data-category="skin" data-keywords="flaxseed gel coconut water skin hydration sun damage dry skin glow mask">
+        <div class="w-full aspect-[4/5] overflow-hidden bg-botanical-lightBg border border-botanical-border cursor-pointer" onclick="openRecipe('Flaxseed & Coconut Water Hydration Mask', 'skin', '2 tbsp Raw Flaxseeds, 1/2 cup Fresh Coconut Water', '1. Simmer 2 tablespoons of flaxseeds in fresh coconut water for 8-10 minutes until a warm gel consistency forms.\n2. Strain the clear gel immediately and let it cool down to room temperature.\n3. Apply smoothly over sun-exposed or dry facial areas.\n4. Leave on for 15-20 minutes until dry, then rinse off with cold water to lock in hydration.')">
+          <img src="images/flaxseed_coconut.png" alt="Minimalist organic flaxseed and coconut water skin gel treatment" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+        </div>
+        <div class="pt-6 pb-2 px-2 space-y-2">
+          <span class="text-[9px] font-bold text-botanical-accent uppercase tracking-[0.2em]">Skin Care Secret</span>
+          <h3 class="font-display text-2xl font-medium text-botanical-textDark leading-tight">Flaxseed & Coconut Water Ultra-Hydration Mask</h3>
+          <div class="flex justify-between items-center pt-4 text-xs">
+            <span class="text-botanical-textMuted font-medium">⏱️ 20 Mins</span>
+            <button class="btn-remedy text-botanical-textDark font-bold tracking-wider text-[11px] uppercase" onclick="this.parentElement.parentElement.previousElementSibling.click()">View Ritual</button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Adsterra Banner Standard Placeholder (With Safety Settings) -->
@@ -322,7 +337,6 @@
     }
 
     function openRecipe(title, category, ingredients, instructions) {
-      // 🚀 Adsterra Smartlink එක මෙතනට ඇතුළත් කර ඇත. User බටන් එක ක්ලික් කරද්දී background එකේ ad එක open වේ.
       window.open("https://www.effectivecpmnetwork.com/avs8wsm38?key=1e232f1d7df934e712dbacb8532181b8", "_blank");
 
       const lightbox = document.getElementById('recipe-lightbox');
